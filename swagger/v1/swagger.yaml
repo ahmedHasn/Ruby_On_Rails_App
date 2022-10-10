@@ -1,0 +1,131 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/applications":
+    tag: Application
+    get:
+      summary: list applications
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create application
+      responses:
+        '200':
+          description: successful
+  "/api/v1/applications/{id}/edit":
+    tag: Application
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit application
+      responses:
+        '200':
+          description: successful
+  "/api/v1/applications/{id}":
+    tag: Application
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show application
+      responses:
+        '200':
+          description: successful
+  "/api/v1/chats/applications/{application_token}":
+    tag: Chats
+    parameters:
+    - name: application_token
+      in: path
+      description: application_token
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show chat
+      responses:
+        '200':
+          description: successful
+  "/api/v1/chats":
+    tag: Chats
+    get:
+      summary: list chats
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create chat
+      responses:
+        '200':
+          description: successful
+  "/api/v1/chats/{id}/edit":
+    tag: Chats
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit chat
+      responses:
+        '200':
+          description: successful
+  "/api/v1/messages":
+    tag: Messages
+    get:
+      summary: list messages
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create message
+      responses:
+        '200':
+          description: successful
+  "/api/v1/messages/{id}/edit":
+    tag: Messages
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit message
+      responses:
+        '200':
+          description: successful
+  "/api/v1/messages/{id}":
+    tag: Messages
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show message
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
